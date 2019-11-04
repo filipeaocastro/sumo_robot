@@ -18,10 +18,12 @@ class MegaPingWin{
 
         void praFrente(uint8_t velocidade, char lado);
         void praTras(uint8_t velocidade, char lado);
-        void curva(uint8_t velocidade, , char lado);
+        void curva(uint8_t velocidade, uint8_t freio, char lado);
         int lerTSSOP(char lado);
         int lerLinha();
-        int defineBotInicio(int pino);
+        int defineBotInicio(int _pino);
+
+        int setLimiarLinha(int _limiar);
         
 
 
@@ -29,6 +31,7 @@ class MegaPingWin{
 
         uint8_t = _INA, _IN1, _IN2, _IN3, _IN4, _INB, _dist_sensor, _tssop_dir, _tssop_esq,
         _linha_dir, _linha_esq;
+
 
         int percentToPWM(uint8_t val);
 
