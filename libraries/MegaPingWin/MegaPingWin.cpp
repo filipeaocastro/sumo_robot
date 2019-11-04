@@ -114,7 +114,18 @@ void MegaPingWin::praTras(uint8_t velocidade, char lado)
 }
 void MegaPingWin::curva(uint8_t velocidade, uint8_t freio, char lado)
 {
-    
+    int desnivel = velocidade - freio;
+
+    if(lado == 'E')
+    {
+        praFrente(velocidade, 'D');
+        praFrente(freio, 'E');
+    }
+    else
+    {
+        praFrente(velocidade, 'E');
+        praFrente(freio, 'D');
+    }
 }
 int MegaPingWin::lerTSSOP(char lado)
 {
@@ -125,6 +136,14 @@ int MegaPingWin::lerLinha()
 
 }
 int MegaPingWin::defineBotInicio(int _pino)
+{
+
+}
+int MegaPingWin::lerTodosFrente()
+{
+
+}
+int MegaPingWin::lerDistancia()
 {
 
 }

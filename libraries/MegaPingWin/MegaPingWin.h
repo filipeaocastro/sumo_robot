@@ -22,6 +22,8 @@ class MegaPingWin{
         int lerTSSOP(char lado);
         int lerLinha();
         int defineBotInicio(int _pino);
+        int lerTodosFrente();
+        int lerDistancia();
 
         int setLimiarLinha(int _limiar);
         
