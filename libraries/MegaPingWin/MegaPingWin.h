@@ -21,6 +21,7 @@ class MegaPingWin{
         void curva(uint8_t velocidade, , char lado);
         int lerTSSOP(char lado);
         int lerLinha();
+        int defineBotInicio(int pino);
         
 
 
