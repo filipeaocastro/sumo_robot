@@ -57,7 +57,7 @@ void MegaPingWin::praFrente(uint8_t velocidade, char lado)
         
         // Motor esquerdo
         digitalWrite(_IN1, LOW);
-        digitalWrite(IN2, HIGH);
+        digitalWrite(_IN2, HIGH);
     }
     else
     {
@@ -77,7 +77,40 @@ void MegaPingWin::praFrente(uint8_t velocidade, char lado)
 
 void MegaPingWin::praTras(uint8_t velocidade, char lado)
 {
-    
+    velocidade = percentToPWM(velocidade);
+
+    if(lado == 'D')
+    {
+        // Velocidade
+        analogWrite(_ENB, velocidade);
+
+        // Motor direito
+        digitalWrite(_IN3, LOW);
+        digitalWrite(_IN4, HIGH); 
+    }
+    else if(lado == 'E')
+    {
+        // Velocidade
+        analogWrite(_ENA, velocidade);
+        
+        // Motor esquerdo
+        digitalWrite(_IN1, HIGH);
+        digitalWrite(_IN2, LOW);
+    }
+    else
+    {
+        // Velocidade
+        analogWrite(_ENA, velocidade);
+        analogWrite(_ENB, velocidade);
+        
+        // Motor esquerdo
+        digitalWrite(_IN1, HIGH);
+        digitalWrite(_IN2, LOW);
+
+        // Motor direito
+        digitalWrite(_IN3, LOW);
+        digitalWrite(_IN4, HIGH);
+    }
 }
 void MegaPingWin::curva(uint8_t velocidade, uint8_t freio, char lado)
 {
