@@ -3,36 +3,38 @@
     Github: /filipeaocastro
 */
 
-#ifndef MegaPingWin_h
-#define MegaPingWin_h
+#ifndef SumoRobot_h
+#define SumoRobot_h
 
 #include "Arduino.h"
 
-class MegaPingWin{
+class SumoRobot{
 
     public:
 
-        MegaPingWin(uint8_t INA, uint8_t IN1, uint8_t IN2, uint8_t IN3, uint8_t IN4, uint8_t INB, 
-        uint8_t dist_sensor, uint8_t tssop_dir, uint8_t tssop_esq, uint8_t linha_dir, 
-        uint8_t linha_esq);
+        SumoRobot(uint8_t INA, uint8_t IN1, uint8_t IN2, uint8_t IN3, uint8_t IN4, uint8_t INB, 
+        uint8_t dist_sensor, uint8_t tssop_dir, uint8_t tssop_esq, uint8_t border_dir, 
+        uint8_t border_esq);
 
-        void praFrente(uint8_t velocidade, char lado);
-        void praTras(uint8_t velocidade, char lado);
-        void curva(uint8_t velocidade, uint8_t freio, char lado);
-        int lerTSSOP(char lado);
-        int lerLinha();
-        int defineBotInicio(int _pino);
-        int lerTodosFrente();
-        int lerDistancia();
+        INA, IN1, IN2, IN3, IN4, INB, dist_sensor, tssop_dir, tssop_esq, linha_dir, linha_esq
 
-        int setLimiarLinha(int _limiar);
+        void goAhead(uint8_t velocidade, char lado);
+        void goBack(uint8_t velocidade, char lado);
+        void curve(uint8_t velocidade, uint8_t freio, char lado);
+        int readTSSOP(char lado);
+        int readBorder();
+        int defineInitBotton(int _pin);
+        int readFrontSensors();
+        int readDistance();
+
+        int setBorderTH(int _threshold);
         
 
 
     private:
 
         uint8_t = _INA, _IN1, _IN2, _IN3, _IN4, _INB, _dist_sensor, _tssop_dir, _tssop_esq,
-        _linha_dir, _linha_esq;
+        _border_dir, _border_esq;
 
 
         int percentToPWM(uint8_t val);
