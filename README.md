@@ -76,8 +76,6 @@ sumobot.curve(speed, level, direction);
 
 ### Sensor Reading
 
-Override the default SPI interface used by the library. **Must** be called before `LoRa.begin()`.
-
 #### Border
 
 #### Distance
