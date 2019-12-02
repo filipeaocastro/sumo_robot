@@ -1,6 +1,3 @@
-# sumo_robot
-Repo of a sumo robot that we've made for a competition.
-
 
 # Sumo Robot API
 
@@ -46,11 +43,11 @@ sumobot.setBorderTH(threshold);
 * `threshold` - Border detection threshold
 
 
-## Movement control
+### Movement control
 
 Functions related to the robot's movement
 
-### Forward and backward
+#### Forward and backward
 Makes a wheel (or both wheels) rotate forward or backward
 ```arduino
 sumobot.goAhead(speed, wheel);
@@ -62,7 +59,7 @@ sumobot.goBack(speed, wheel);
 	* `'L'` - Left wheel
 	* `'B'` - Both wheels 
 
-### Curve
+#### Curve
 Function to make the robot turn or rotate
 
 ```arduino
@@ -74,12 +71,14 @@ sumobot.curve(speed, level, direction);
 	* `'R'` - Turns right (or rotates clockwise)
 	* `'L'` - Turns left (or rotates anticlockwise)
 
-## Sensor Reading
+### Sensor Reading
 
-### Border
+Override the default SPI interface used by the library. **Must** be called before `LoRa.begin()`.
 
-### Distance
+#### Border
 
-### TSSOP
+#### Distance
 
-### Front Sensors
+#### TSSOP
+
+#### Front Sensors
