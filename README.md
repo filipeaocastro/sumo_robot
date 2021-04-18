@@ -1,4 +1,3 @@
-
 # Sumo Robot API
 
 feito no (https://stackedit.io)[StackEdit]
@@ -84,3 +83,8 @@ Override the default SPI interface used by the library. **Must** be called befor
 #### TSSOP
 
 #### Front Sensors
+=======
+# sumo_robot
+Repo of a sumo robot that we've made for a competition.
+
+I'll improve it someday
